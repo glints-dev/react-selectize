@@ -10,6 +10,7 @@ module.exports = class SimpleSelect extends React.Component
     # get-default-props :: () -> Props
     @default-props =
         # autofocus :: Boolean
+        before-blur: ((e) !->) # :: # Event -> ()
         # cancel-keyboard-event-on-selection :: Boolean
         # class-name :: String
         # create-from-search :: [Item] -> String -> Item?

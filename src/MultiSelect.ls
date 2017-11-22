@@ -12,6 +12,7 @@ module.exports = class MultiSelect extends React.Component
     @default-props =
         # autofocus :: Boolean
         # anchor :: Item
+        before-blur: ((e) !->) # :: # Event -> ()
         # cancel-keyboard-event-on-selection :: Boolean
         class-name: ""
         close-on-select: false
