@@ -5,7 +5,6 @@
 |    Property                |   Type                              |   Description                  |
 |----------------------------|-------------------------------------|--------------------------------|
 |    autofocus               | Boolean                             | opens the dropdown menu on load if set to true (defaults to false) |
-|    beforeBlur                  | Event -> Void                       | `({originalEvent :: e, value :: Item, open :: Boolean}){}` |
 |    cancelKeyboardEventOnSelection | Boolean                      | defaults to true, set this to fale when using tab as a delimiter for example |
 |    className               | String                              | class name for the outer element, in addition to "simple-select"|
 |    createFromSearch        | [Item] -> String -> Item?           | implement this function to create new items on the fly, `(options, search){return {label: search, value: search}}`, return null to avoid option creation for the given parameters|
@@ -69,7 +68,6 @@ In addition to the props above
 |    Property                |   Type                               |   Description|
 |--------------------------- |--------------------------------------|---------------------------------|
 |    anchor                  | Item                                 | positions the cursor ahead of the anchor item, set this property to undefined to lock the cursor at the start|
-|    beforeBlur                  | object -> Void                       | `({values :: [Item], open :: Boolean, originalEvent :: DOMEvent}){}`|
 |    createFromSearch        | [Item] -> [Item] -> String -> Item?  | `(options, values, search){return {label: search, value: search}}`|
 |    defaultValues           | [Item]                               | similar to the defaultValue prop of React.DOM.Select but instead takes an array of items|
 |    filterOptions           | [Item] -> [Item] -> String -> [Item] | `(options, values, search){return options}`|

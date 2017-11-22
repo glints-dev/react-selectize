@@ -23,7 +23,6 @@ module.exports = class ReactSelectize extends React.Component
     @default-props =
         anchor: null # :: Item
         autofocus: false
-        before-blur: ((e) !->) # Event -> ()
         cancel-keyboard-event-on-selection: true
         # class-name :: String
         delimiters: []
@@ -185,8 +184,8 @@ module.exports = class ReactSelectize extends React.Component
                                 @props.on-focus e
 
                             on-blur: (e) ~>
-                                check = @props.before-blur e
                                 # to prevent closing the dropdown when the user tries to click & drag the scrollbar in IE
+                                check = false
                                 return if check or (@refs.dropdown-menu and document.active-element == (find-DOM-node @refs.dropdown-menu))
 
                                 <~ @close-dropdown
