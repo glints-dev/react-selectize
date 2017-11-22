@@ -19,6 +19,7 @@ export interface MultipleSelectEvent {
 
 export interface SimpleSelectProps {
   autofocus?: boolean;
+  beforeBlur?(event: SimpleSelectEvent): void;
   cancelKeyboardEventOnSelection?: boolean;
   className?: string;
   createFromSearch?(items: OptionValue[], search: string): OptionValue;
@@ -74,6 +75,8 @@ declare class SimpleSelect extends React.Component<SimpleSelectProps, any> {
 
 export interface MultiSelectProps extends SimpleSelectProps {
   anchor?: OptionValue;
+  beforeBlur?(event: SimpleSelectEvent): void;
+  beforeBlur?(event: MultipleSelectEvent): void;
   createFromSearch?(items: OptionValue[], search: string): OptionValue;
   createFromSearch?(options: OptionValue[], values: OptionValue[], search: string): OptionValue;
   defaultValues?: OptionValue[];
